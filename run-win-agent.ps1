@@ -9,7 +9,7 @@ Set-Content -Path c:/etc/rancher/rke2/config.yaml -Value @"
 server: https://$SERVER:9345
 token: $TOKEN
 kube-proxy-arg: feature-gates=IPv6DualStack=false
-"@ -Wait
+"@
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/rancher/rke2/master/install.ps1 -Outfile [System.Environment]::CurrentDirectory\install.ps1 -Wait
 #Invoke-RestMethod -Uri https://raw.githubusercontent.com/rancher/rke2/master/install.ps1 Add-Content [System.Environment]::CurrentDirectory\run-win-agent.ps1
 $PSScriptRoot\install.ps1 -Version $VERSION -Wait
