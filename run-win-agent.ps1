@@ -3,7 +3,7 @@ $TOKEN = Read-Host -Prompt 'paste in the token from the server nodes: '
 $VERSION = Read-Host -Prompt 'paste the version to test: '
 Write-Host "Setting up Windows agent, talking to...  '$SERVER"
 
-Enable-WindowsOptionalFeature -Online -FeatureName Containers –All -Wait
+Enable-WindowsOptionalFeature -Online -FeatureName Containers –All
 New-Item -Type Directory c:/etc/rancher/rke2 -Force -Wait
 Set-Content -Path c:/etc/rancher/rke2/config.yaml -Value @'
 server: https://$SERVER:9345
