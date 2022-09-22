@@ -502,7 +502,7 @@ function Expand-Tarball() {
     )
     Write-InfoLog "unpacking tarball file to $InstallPath"
     New-Item -Path $InstallPath -Type Directory -Force | Out-Null
-    tar xzf "$Tarball" -C "$InstallPath"
+    tar rxzf "$Tarball" -C "$InstallPath"
 }
 
 function Find-Checksum() {
