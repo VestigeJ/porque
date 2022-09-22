@@ -13,4 +13,4 @@ kube-proxy-arg: feature-gates=IPv6DualStack=false
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/rancher/rke2/master/install.ps1 -Outfile C:\Users\Administrator\install.ps1
 & 'C:\Users\Administrator\install.ps1' -Version $VERSION
 & 'rke2.exe' agent service --add
-Start-Service rke2
+Restart-Service rke2
